@@ -1,3 +1,4 @@
 __pycache__
-data_ingestion
+01_data_ingestion/*
 .ipynb_checkpoints
+!01_data_ingestion/Music_Classification_Dataset.csv
