@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Spotify Music Classification</title>
+{% endblock %}
+
+
+{% block body %} 
+    <h1 class="content">Spotify Music Classification</h1>
+
+        <form action="/" method="POST">
+            <input type="text" name = "trackid" id = "trackid">
+            <input type="submit" value="Submit Track ID">
+        </form>
+
+        {% if prediction %}
+            <p class="content"> The prediction is {{prediction}} </p>
+        {% endif %}
+
+        {% if test %}
+            <p class="content"> The test is {{test}} </p>
+        {% endif %}
+
+{% endblock %}
