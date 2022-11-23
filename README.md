@@ -14,35 +14,28 @@ Each playlist is tagged a genre based on the name of the playlist
 
 There are 13 audio features for each track, including confidence measures like `acousticness`, `liveness`, `speechiness` and `instrumentalness`, perceptual measures like `energy`, `loudness`, `danceability` and `valence` (positiveness), and descriptors like `duration`, `tempo`, `key`, `time signature` and `mode`.
 
-This is all appended into a dataframe and written into a csv file (~900 rows)
+The data is fetched from the analytics zone of big query dataset. Currently the model was built on `37015` tracks
 
 ## Modelling
 
 ### Data Cleaning
 
-- The Target variable was created i.e. whether a genre was `Rock` or not
+- The Target variable was created based on the genre
 - Data was cleaned to make sure there were not any NAs
 - Duplicate tracks were removed (since more than one playlist can have the same track)
 - Remove columns that were not required for modelling such as `type`,`id`,`uri`,`track_href`,`analysis_url` etc.
 
 ### Model Training
 
-A `Random Forest` algorithm was used to predict the target variable (whether a track was `Rock` music or not)
+An `Xgboost` algorithm was used to predict the target variable
 
 Grid search methodology was used for hyperparameter tuning. The optimal parameters came out to be:
 
 ```
-{'max_depth': 100, 'max_features': 2, 'min_samples_leaf': 3, 'min_samples_split': 8, 'n_estimators': 200}
+{'max_depth': 100, 'max_features': 2, 'min_samples_leaf': 3, 'min_samples_split': 8, 'n_estimators': 100}
 ```
 
-The model performance with various evaluation metric were: 
-
-```
-Precision score =  0.938
-Recall score =  0.384
-F1 score =  0.545
-ROC-AUC score =  0.688
-```
+### Model Performance
 
 ## Deployment of the model
 
@@ -54,7 +47,6 @@ The model can be deployed locally using Docker and the following commands
 docker build -t musicpred .
 docker run -it --rm -p 9698:9698 musicpred
 ```
-
 
 ### Cloud Deployment (GCP)
 
