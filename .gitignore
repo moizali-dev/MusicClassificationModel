@@ -2,3 +2,9 @@ __pycache__
 01_data_ingestion/*
 .ipynb_checkpoints
 !01_data_ingestion/Music_Classification_Dataset.csv
+.DS_Store
+.env
+test
+/musicprojects-5331af2261bf.json
+model_v1
+Dim_Tracks_All.csv
