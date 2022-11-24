@@ -11713,3 +11713,9 @@ pre .code {
   font-family: "Raleway", sans-serif;
 
 }
+
+.break-button {
+  margin: 10px 0;
+  color: white;
+  font-style: italic;
+}

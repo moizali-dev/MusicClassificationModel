@@ -1,6 +1,7 @@
 import sys
 import pickle
 import os
+import time
 from datetime import datetime
 from dotenv import load_dotenv
 load_dotenv()
@@ -61,14 +62,14 @@ def predict():
     db.session.add(new_track)
     db.session.commit()
 
-    # get the track features
-    print(os.environ["SPOTIFY_TOKEN"])
-
     # loop until features are found and timeout is over
     features = ''
     while len(features) < 2:
+        sc = SpotifyClient(os.environ["SPOTIFY_TOKEN"],os.environ["SPOTIFY_USER"]) # test
+        print(sc._authorization_token)
         features = sc.get_track_features(str(track_content))
-        tokenupdate.update_token(firsttime="Yes")
+        tokenupdate.update_token(firsttime="Yes") 
+        time.sleep(1)       
     
     print(features)
     print(len(features))
