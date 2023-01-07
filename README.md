@@ -2,6 +2,10 @@
 
 The purpose of this project is to create a model which will predict the genre of a track `'Hip-Hop':0, 'Pop':1, 'Country':2, 'Rock':3, 'R&B':4, 'Dance/Electronic':5, 'Indie':6, 'Sleep':7, 'Jazz':8, 'Soul':9, 'Metal':10` based on the 13 audio features provided from the Spotify API
 
+# Link
+
+[Music Genre Classification Link](https://predictgenre-uzldmirsla-uc.a.run.app/)
+
 # Demo
 
 https://user-images.githubusercontent.com/22460824/210695071-160a033e-fbe9-410d-ad63-0dacfeb42b01.mov
