@@ -14,6 +14,10 @@ https://user-images.githubusercontent.com/22460824/210695071-160a033e-fbe9-410d-
 
 Music classification has a wide range of uses from tagging new songs that were uploaded and profiling them automatically at scale to figuring out which genre a user listens to more and possibly having it as an input for a recommendation system
 
+## Design and Flow Architecture
+
+![Pipeline](https://github.com/moizali-dev/MusicClassificationModel/blob/main/02_model_deployment/images/Pipeline.png?raw=true)
+
 ## Data Ingestion
 
 The dataset is created using the Spotify API. It downloads all the tracks from a playlist as `Tracks` object and for each track gets the features.
